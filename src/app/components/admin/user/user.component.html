@@ -1,0 +1,80 @@
+<div class="container-fluid">
+
+  <!-- navigation -->
+  <app-header></app-header>
+
+  <div>
+    <!-- class="text-center mt-3 mb-3" -->
+    <h2>Quản Lý Người Dùng</h2>
+    <a href="/users/new" class="fas fa-user-plus fa-2x icon-dark mr-2"></a>
+
+    <a href="/users/export/csv" class="fas fa-file-csv fa-2x mr-2" style="color: #007c01"></a>
+
+    <a href="/users/export/excel" class="fas fa-file-excel fa-2x mr-2" style="color: #1e6b3f"></a>
+
+    <a href="/users/export/pdf" class="fas fa-file-pdf fa-2x" style="color: #db0001"></a>
+  </div>
+
+  <!-- search -->
+  <app-search></app-search>
+
+  <!-- table -->
+  <div class="full-details">
+    <table class="table table-bordered table-striped table-hover table-responsive-xl">
+      <thead class="thead-dark">
+        <tr>
+          <th class="hideable-column">ID</th>
+          <th>Ảnh</th>
+          <th class="hideable-column">Email</th>
+          <th>Tên</th>
+          <th>Họ</th>
+          <th>Vai trò</th>
+          <th>Trạng thái</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <!-- load user list -->
+      <tbody>
+        <th class="hideable-column">ID</th>
+        <th>Ảnh</th>
+        <th class="hideable-column">Email</th>
+        <th>Tên</th>
+        <th>Họ</th>
+        <th>Vai trò</th>
+        <th>Trạng thái</th>
+        <th></th>
+      </tbody>
+      <!-- load user list -->
+    </table>
+  </div>
+  <!-- table -->
+
+  <div class="less-details">
+    <div class="row m-1">
+      <div class="col-4">
+        <span class="fas fa-portrait fa-3x icon-silver"></span>
+        <img style="width: 100px" />
+      </div>
+      <div class="col-8">
+        <th class="hideable-column">ID</th>
+        <th>Ảnh</th>
+        <th class="hideable-column">Email</th>
+        <th>Tên</th>
+        <th>Họ</th>
+        <th>Vai trò</th>
+        <th>Trạng thái</th>
+        <th></th>
+      </div>
+      <div>&nbsp;</div>
+    </div>
+  </div>
+
+  <!-- pagination -->
+  <div replace="fragments :: pagination('/users', 'người dùng')"></div>
+
+  <!-- confirm modal -->
+  <div replace="modal_fragments :: confirm_modal"></div>
+
+  <app-footer></app-footer>
+</div>
