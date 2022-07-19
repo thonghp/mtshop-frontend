@@ -35,15 +35,27 @@
       </thead>
 
       <!-- load user list -->
-      <tbody>
-        <th class="hideable-column">ID</th>
-        <th>Ảnh</th>
-        <th class="hideable-column">Email</th>
-        <th>Tên</th>
-        <th>Họ</th>
-        <th>Vai trò</th>
-        <th>Trạng thái</th>
-        <th></th>
+      <!-- users chính là users: User[]; bên file user.component.ts -->
+      <tbody *ngFor="let user of users">
+        <td class="hideable-column">{{user.id}}</td>
+        <td>
+          <span th:if="${user.photos == null}" class="fas fa-portrait fa-3x icon-silver"></span>
+          <img th:if="${user.photos != null}" th:src="@{${user.photosImagePath}}" style="width: 100px" />
+        </td>
+        <td class="hideable-column">{{user.email}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>vai trò</td>
+        <td>
+          <a *ngif="user.enabled == true; else disabled" class="fas fa-check-circle fa-2x icon-green"
+            title="Vô hiệu hoá"></a>
+          <ng-template #disabled>
+            <a class="fas fa-check-circle fa-2x icon-dark" title="Kích hoạt"></a>
+          </ng-template>
+        </td>
+        <td>
+
+        </td>
       </tbody>
       <!-- load user list -->
     </table>

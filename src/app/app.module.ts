@@ -14,6 +14,7 @@ import { ErrorComponent } from './components/admin/error/error.component';
 import { HeaderComponent } from './components/admin/header/header.component';
 import { FooterComponent } from './components/admin/footer/footer.component';
 import { SearchComponent } from './components/admin/search/search.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { SearchComponent } from './components/admin/search/search.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
